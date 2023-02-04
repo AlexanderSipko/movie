@@ -10,3 +10,12 @@ body {
 .nav-wrapper {
   padding: 0 1rem;
 }
+
+.content {
+  min-height: calc(100vh - 64px - 37.5px);
+  padding: 1.5rem 0;
+}
+
+.page-footer {
+  padding: 10px 0 5px 0;
+}
