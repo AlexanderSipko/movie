@@ -1,15 +1,12 @@
- 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello</h1>
-      <p>It's my start page to create react app</p>
-      <p>i should create readme.md file, in order to describe my project and all people know
-        how to use </p>
-        <p zn_id="23">Для проекта надо подготовить хорошее описание. При составлении описания можно придерживаться такого плана:</p>
-        <ul zn_id="24"><li zn_id="63">название (желательно и его изображение тоже. Отредактировать можно на canva.com, если вы не специалист по графическому дизайну);</li><li zn_id="64">описание (с использованием слов и изображений);</li><li zn_id="65">демо (изображения, ссылки на видео, интерактивные демо-ссылки);</li><li zn_id="66">технологии в проекте;</li><li zn_id="67">что-то характерное для проекта (проблемы, с которыми пришлось столкнуться, уникальные составляющие проекта);</li><li zn_id="68">техническое описание проекта (установка, настройка, как помочь проекту).</li></ul>
+import icon from './media/print_icon.png'
+import {Header} from './layout/Header'
 
-    </div>
+function App() {
+
+  return (
+    <>
+      <Header/>
+    </>
   );
 }
 
