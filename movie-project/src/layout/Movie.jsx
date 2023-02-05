@@ -8,8 +8,8 @@ function Movie(props) {
         </div>
         <div className="card-content">
           <span className="card-title activator grey-text text-darken-4">{props.title}
-            <i className="material-icons right">{props.year}</i></span>
-          <p><a href="!#">This is a link</a></p>
+            <i className="material-icons right">{props.type} {props.year}</i></span>
+          <p><a href="!#">Detail information</a></p>
         </div>
       </div>
     )
