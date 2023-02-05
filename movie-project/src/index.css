@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url(../src/media/movie_background_1.jpg);
-  background-size: cover; */
+  background-image: url(../src/media/movie_background_1.jpg);
+  background-size: contain;
 }
 
 .nav-wrapper {
@@ -16,21 +16,19 @@ body {
 .content {
   min-height: calc(100vh - 64px - 37.5px);
   padding: 1.5rem 0;
+  color: black;
+
+  /* background-image: c; */
 }
 
 .page-footer {
   padding: 10px 0 5px 0;
 }
 
-.demo_wrap {
-  position: relative;
+.card .card-image img {
+    width: 180px !important;
 }
 
-.demo_wrap img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+.card {
   opacity: 0.8;
 }
