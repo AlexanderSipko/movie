@@ -25,10 +25,13 @@ body {
   padding: 10px 0 5px 0;
 }
 
-.card .card-image img {
-    width: 180px !important;
-}
 
 .card {
   opacity: 0.8;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
 }

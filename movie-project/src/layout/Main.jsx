@@ -4,30 +4,32 @@ import {Movies} from './Movies'
 
 function Main() {
     const [movies, setMovies] = React.useState([]);
-    const [Load, setLoad] = React.useState(false);
     const inputSearch = React.useRef('');
 
     function handler() {
-        setLoad(false)
-            fetch(
-                `http://www.omdbapi.com/?apikey=32d959c&s=${inputSearch.current.value}`)
-                .then((res) => res.json())
-                .then((json) => {
+        // позволяет оставлять предыдущую выдачу в случае отсутствия выдачи
+        fetch(
+            `http://www.omdbapi.com/?apikey=32d959c&s=${inputSearch.current.value}`)
+            .then((res) => res.json())
+            .then((json) => {
+                if (json.Response === "True") {
                     setMovies(json.Search)
-                    setLoad(true)
-                })
+            } else {
+                setMovies([])
+            }
+        })
     }
 
     function handlerClear() {
-        setLoad(false)
         inputSearch.current.value = ''
+        setMovies([])
     }
 
     return(
         <main className="container content">
             <input onChange={handler} type="text" name='movie' ref={inputSearch}/>
             <a href="!#" onClick={handlerClear} className="waves-effect waves-light btn-small">Clear search</a>
-            {Load?<Movies movies={movies} Load={Load}/>:'Load page...'}
+            {movies.length > 0 ?<Movies movies={movies}/>:<h2>Load page...</h2>}
         </main>
     )
 }
