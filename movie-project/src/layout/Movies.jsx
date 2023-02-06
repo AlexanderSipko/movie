@@ -1,17 +1,16 @@
-import React from 'react';
+import React from 'react'
 import {Movie} from './Movie'
 
 function Movies(props) {
+
+  const {movies} = props
     
     return(
         <div className="movies">  
-          {props.List.Search?props.List.Search.map((item) =>
-            {return <Movie 
-                key={item.imdbID}
-                title={item.Title}
-                type={item.Type}
-                year={item.Year} 
-                img={item.Poster} /> })
+          {movies?movies.map((movies) =>
+             <Movie 
+                key={movies.imdbID}
+                {...movies} />)
           :null}
         </div>
     )
