@@ -6,8 +6,8 @@ import {Search} from './Search'
 
 function Main() {
 
-    const [movies, setMovies] = React.useState([]);
-    
+    const [movies, setMovies] = React.useState(0);
+
     function handler() {
         // позволяет оставлять предыдущую выдачу в случае отсутствия выдачи
         fetch(
@@ -21,10 +21,17 @@ function Main() {
             }
         })
     }
-    
+
+    if (movies===0) {
+        handler()
+    }
     
     function searchMovies(str) {
         // позволяет оставлять предыдущую выдачу в случае отсутствия выдачи
+        if (str === '') {
+            return null
+        }
+
         setMovies([])
         fetch(
             `http://www.omdbapi.com/?apikey=32d959c&s=${str}`)

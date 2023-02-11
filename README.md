@@ -4,7 +4,8 @@
 [<img src="/movie-project/src/media/readMe.jpg" width="600"/>]()
 <p align="center">
 <a href="https://skillicons.dev/">
-    <img src="https://skillicons.dev/icons?i=react,css,html,javascript&perline=7&theme=dark" />
+    <img
+   src="https://skillicons.dev/icons?i=react,css,html,javascript&perline=7&theme=dark" />
   </a>
 </p>
 
