@@ -11,7 +11,7 @@ function Main() {
     function handler() {
         // позволяет оставлять предыдущую выдачу в случае отсутствия выдачи
         fetch(
-            `http://www.omdbapi.com/?apikey=32d959c&s=matrix`)
+            `http://www.omdbapi.com/?apikey=32d959c&s=top`)
             .then((res) => res.json())
             .then((json) => {
                 if (json.Response === "True") {
