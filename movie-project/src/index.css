@@ -44,3 +44,25 @@ body {
   top: 0;
   right: 0.5rem;
 }
+
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+
+    color: #104d93;
+    font-family: sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+label {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}

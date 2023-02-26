@@ -9,7 +9,7 @@ function Main() {
     const [movies, setMovies] = React.useState(0);
 
     function handler() {
-        // позволяет оставлять предыдущую выдачу в случае отсутствия выдачи
+        // произвольная выдача фильмов при первой загрузке страницы
         fetch(
             `http://www.omdbapi.com/?apikey=32d959c&s=top`)
             .then((res) => res.json())
@@ -26,15 +26,17 @@ function Main() {
         handler()
     }
     
-    function searchMovies(str) {
+    function searchMovies(str, type='all') {
         // позволяет оставлять предыдущую выдачу в случае отсутствия выдачи
         if (str === '') {
-            return null
+            str = 'top'
         }
 
         setMovies([])
+
+        console.log(`http://www.omdbapi.com/?apikey=32d959c${type !== 'all' ? `&type=${type}`  : ''}&s=${str}`)
         fetch(
-            `http://www.omdbapi.com/?apikey=32d959c&s=${str}`)
+            `http://www.omdbapi.com/?apikey=32d959c${type !== 'all' ? `&type=${type}`  : ''}&s=${str}`)
             .then((res) => res.json())
             .then((json) => {
                 if (json.Response === "True") {
