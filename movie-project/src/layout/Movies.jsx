@@ -3,7 +3,7 @@ import {Movie} from './Movie'
 
 function Movies(props) {
 
-  const {movies} = props
+  const {movies = []} = props
     
     return(
         <div className="movies">  
@@ -11,7 +11,7 @@ function Movies(props) {
              <Movie 
                 key={movies.imdbID}
                 {...movies} />)) : (
-                  'Nothing to show ...'
+                  <h4>Nothing to show</h4>
                 )}
         </div> 
     )

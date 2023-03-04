@@ -4,6 +4,8 @@ import {Movies} from './Movies'
 import {Preload} from './Preload'
 import {Search} from './Search'
 
+const API_KEY = process.env.REACT_APP_API_KEY
+
 function Main() {
 
     const [movies, setMovies] = React.useState(0);
@@ -13,7 +15,7 @@ function Main() {
         // произвольная выдача фильмов при первой загрузке страницы
         setMovies([])
         fetch(
-            `http://www.omdbapi.com/?apikey=32d959c&s=top`)
+            `http://www.omdbapi.com/?apikey=${API_KEY}&s=top`)
             .then((res) => res.json())
             .then((json) => {
                 if (json.Response === "True") {
@@ -35,9 +37,8 @@ function Main() {
 
         setMovies([])
         setLoading(false)
-        console.log(`http://www.omdbapi.com/?apikey=32d959c${type !== 'all' ? `&type=${type}`  : ''}&s=${str}`)
         fetch(
-            `http://www.omdbapi.com/?apikey=32d959c${type !== 'all' ? `&type=${type}`  : ''}&s=${str}`)
+            `http://www.omdbapi.com/?apikey=${API_KEY}${type !== 'all' ? `&type=${type}`  : ''}&s=${str}`)
             .then((res) => res.json())
             .then((json) => {
                 if (json.Response === "True") {
