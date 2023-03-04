@@ -15,13 +15,16 @@ function Main() {
         // произвольная выдача фильмов при первой загрузке страницы
         setMovies([])
         fetch(
-            `http://www.omdbapi.com/?apikey=${API_KEY}&s=top`)
+            `https://www.omdbapi.com/?apikey=${API_KEY}&s=top`)
             .then((res) => res.json())
             .then((json) => {
                 if (json.Response === "True") {
                     setMovies(json.Search);
             }
             setLoading(true)
+        }).catch((err) => {
+            console.error(err);
+            setLoading(false)
         })
     }
 
@@ -38,13 +41,16 @@ function Main() {
         setMovies([])
         setLoading(false)
         fetch(
-            `http://www.omdbapi.com/?apikey=${API_KEY}${type !== 'all' ? `&type=${type}`  : ''}&s=${str}`)
+            `https://www.omdbapi.com/?apikey=${API_KEY}${type !== 'all' ? `&type=${type}`  : ''}&s=${str}`)
             .then((res) => res.json())
             .then((json) => {
                 if (json.Response === "True") {
                     setMovies(json.Search)
             }
             setLoading(true)
+        }).catch((err) => {
+            console.error(err);
+            setLoading(false)
         })
     }
 
